@@ -1,0 +1,6 @@
+*
+!.gitignore
+*.txt
+!build*
+!bin*
+!html*

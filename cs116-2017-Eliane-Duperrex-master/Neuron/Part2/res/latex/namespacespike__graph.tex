@@ -1,0 +1,49 @@
+\hypertarget{namespacespike__graph}{\section{spike\-\_\-graph Namespace Reference}
+\label{namespacespike__graph}\index{spike\-\_\-graph@{spike\-\_\-graph}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+tuple \hyperlink{namespacespike__graph_a6f9be9e759aaafa3013bdc8d11a50915}{data} = np.\-genfromtxt('../res/times\-\_\-spike.\-txt')
+\item 
+tuple \hyperlink{namespacespike__graph_a0f1ea338f80e69a3131a5e1ebcda2fb7}{select} = np.\-array(\mbox{[}d for d in \hyperlink{namespacespike__graph_a6f9be9e759aaafa3013bdc8d11a50915}{data} if d\mbox{[}1\mbox{]} $<$ 30\mbox{]})
+\item 
+tuple \hyperlink{namespacespike__graph_a42e120d3042c368a5bc01bb0bec93035}{data1} = select.\-transpose()
+\item 
+tuple \hyperlink{namespacespike__graph_a6f0be72cbf414e636c92c1ed77515c1d}{fig} = pl.\-figure()
+\item 
+tuple \hyperlink{namespacespike__graph_ac04ae7194fd2b19e10cbf2db5aa59152}{gs} = Grid\-Spec(4,1)
+\item 
+tuple \hyperlink{namespacespike__graph_a69bc8269ca3daf787ef3712ac7661871}{ax0} = pl.\-subplot(\hyperlink{namespacespike__graph_ac04ae7194fd2b19e10cbf2db5aa59152}{gs}\mbox{[}\-:-\/1, \-:\mbox{]})
+\item 
+tuple \hyperlink{namespacespike__graph_a92f69e9db1c7f4f329d5915727b031e0}{ax} = pl.\-gca()
+\item 
+tuple \hyperlink{namespacespike__graph_ada8edbab071f17401b2c0b018f027734}{ax1} = pl.\-subplot(\hyperlink{namespacespike__graph_ac04ae7194fd2b19e10cbf2db5aa59152}{gs}\mbox{[}-\/1, \-:\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{namespacespike__graph_a92f69e9db1c7f4f329d5915727b031e0}{\index{spike\-\_\-graph@{spike\-\_\-graph}!ax@{ax}}
+\index{ax@{ax}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{ax}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-ax = pl.\-gca()}}\label{namespacespike__graph_a92f69e9db1c7f4f329d5915727b031e0}
+\hypertarget{namespacespike__graph_a69bc8269ca3daf787ef3712ac7661871}{\index{spike\-\_\-graph@{spike\-\_\-graph}!ax0@{ax0}}
+\index{ax0@{ax0}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{ax0}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-ax0 = pl.\-subplot({\bf gs}\mbox{[}\-:-\/1, \-:\mbox{]})}}\label{namespacespike__graph_a69bc8269ca3daf787ef3712ac7661871}
+\hypertarget{namespacespike__graph_ada8edbab071f17401b2c0b018f027734}{\index{spike\-\_\-graph@{spike\-\_\-graph}!ax1@{ax1}}
+\index{ax1@{ax1}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{ax1}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-ax1 = pl.\-subplot({\bf gs}\mbox{[}-\/1, \-:\mbox{]})}}\label{namespacespike__graph_ada8edbab071f17401b2c0b018f027734}
+\hypertarget{namespacespike__graph_a6f9be9e759aaafa3013bdc8d11a50915}{\index{spike\-\_\-graph@{spike\-\_\-graph}!data@{data}}
+\index{data@{data}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-data = np.\-genfromtxt('../res/times\-\_\-spike.\-txt')}}\label{namespacespike__graph_a6f9be9e759aaafa3013bdc8d11a50915}
+\hypertarget{namespacespike__graph_a42e120d3042c368a5bc01bb0bec93035}{\index{spike\-\_\-graph@{spike\-\_\-graph}!data1@{data1}}
+\index{data1@{data1}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{data1}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-data1 = select.\-transpose()}}\label{namespacespike__graph_a42e120d3042c368a5bc01bb0bec93035}
+\hypertarget{namespacespike__graph_a6f0be72cbf414e636c92c1ed77515c1d}{\index{spike\-\_\-graph@{spike\-\_\-graph}!fig@{fig}}
+\index{fig@{fig}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{fig}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-fig = pl.\-figure()}}\label{namespacespike__graph_a6f0be72cbf414e636c92c1ed77515c1d}
+\hypertarget{namespacespike__graph_ac04ae7194fd2b19e10cbf2db5aa59152}{\index{spike\-\_\-graph@{spike\-\_\-graph}!gs@{gs}}
+\index{gs@{gs}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{gs}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-gs = Grid\-Spec(4,1)}}\label{namespacespike__graph_ac04ae7194fd2b19e10cbf2db5aa59152}
+\hypertarget{namespacespike__graph_a0f1ea338f80e69a3131a5e1ebcda2fb7}{\index{spike\-\_\-graph@{spike\-\_\-graph}!select@{select}}
+\index{select@{select}!spike_graph@{spike\-\_\-graph}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}tuple spike\-\_\-graph.\-select = np.\-array(\mbox{[}d for d in {\bf data} if d\mbox{[}1\mbox{]} $<$ 30\mbox{]})}}\label{namespacespike__graph_a0f1ea338f80e69a3131a5e1ebcda2fb7}

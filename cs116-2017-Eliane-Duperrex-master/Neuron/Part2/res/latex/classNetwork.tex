@@ -1,0 +1,299 @@
+\hypertarget{classNetwork}{\section{Network Class Reference}
+\label{classNetwork}\index{Network@{Network}}
+}
+
+
+{\ttfamily \#include $<$network.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}{Network} ()
+\item 
+\hyperlink{classNetwork_a59f36ff8e94a65e0088d99dbd17b249d}{Network} (const int \&excitat\-\_\-numb, const int \&inhibit\-\_\-numb, const int \&excitat\-\_\-connexion, const int \&inhibit\-\_\-connexion)
+\item 
+\hyperlink{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{$\sim$\-Network} ()
+\item 
+\hyperlink{constant_8hpp_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \hyperlink{classNetwork_a91b4de88cf516e2971e064fc38e9c938}{get\-Nb\-Neurons} () const 
+\item 
+array$<$ \hyperlink{constant_8hpp_a5d7deb06d9443e7d4a47bf078638cc91}{Index}, 2 $>$ \hyperlink{classNetwork_a49d5f131ebca7833869c93a7c7ce2e79}{get\-Connexion\-Matrix\-Size} () const 
+\item 
+double \hyperlink{classNetwork_a3c6253cb84a3a0a23a84befda4a08dbc}{get\-Membrane\-Potential\-Neuron} (\hyperlink{constant_8hpp_a5d7deb06d9443e7d4a47bf078638cc91}{Index} i) const 
+\item 
+void \hyperlink{classNetwork_ab79d5782d33c2cf69f7a2a00bbc534db}{update} (const \hyperlink{constant_8hpp_a58a8d380569868e765017aef9c749646}{step} \&t)
+\item 
+void \hyperlink{classNetwork_ad69a9355cb163b97e3d8efede48c1433}{store\-Time\-Spike} (std\-::ofstream \&file) const 
+\item 
+void \hyperlink{classNetwork_a0a397c35415b2f9255969a13c80af9ec}{store\-Potential} (const \hyperlink{constant_8hpp_a5d7deb06d9443e7d4a47bf078638cc91}{Index} \&i, std\-::ofstream \&file) const 
+\item 
+void \hyperlink{classNetwork_afd314bc37bd9a5d28df356aeb39b8122}{store\-Connexion} (ofstream \&file) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classNetwork_a2ca8d812c87a17d0391f8db5061a1b75}{poisson\-Generator} (const double \&rate)
+\item 
+void \hyperlink{classNetwork_a370614351bf7c2ae2134c3de2a0b1b59}{initialise\-Neurons} (const int \&excitatory\-\_\-number, const int \&inhibitory\-\_\-number)
+\item 
+void \hyperlink{classNetwork_a673ead2bf1a9446f7cb1eac2e42bfc0d}{initialise\-Connexion} (const int \&excitatory\-\_\-number, const int \&inhibitory\-\_\-number, const int \&excitatory\-\_\-connexion, const int \&inhibitory\-\_\-connexion)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classNeuron}{Neuron} $\ast$ $>$ \hyperlink{classNetwork_a6f71e4eb423d2f8fd9cfa8d5f01cb257}{neurons\-\_\-}
+\begin{DoxyCompactList}\small\item\em neurons in the network \end{DoxyCompactList}\item 
+vector$<$ vector$<$ \hyperlink{constant_8hpp_a5d7deb06d9443e7d4a47bf078638cc91}{Index} $>$ $>$ \hyperlink{classNetwork_aa6e3e23d543791c50b6010bfb223b12d}{connexion\-\_\-}
+\begin{DoxyCompactList}\small\item\em matrix of connexions between the neurons \end{DoxyCompactList}\item 
+const int \hyperlink{classNetwork_afdc85e896d66ebb7c03e5f084fe112f4}{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y} = 10000
+\begin{DoxyCompactList}\small\item\em number of excitatory neuron \end{DoxyCompactList}\item 
+const int \hyperlink{classNetwork_a9194d47c3f0524982ed4be54c5dec78e}{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y} = 2500
+\begin{DoxyCompactList}\small\item\em number of inhibitory neuron \end{DoxyCompactList}\item 
+const int \hyperlink{classNetwork_a0886932ffef920b0691f563eb9eeb92c}{N\-\_\-\-T\-O\-T\-A\-L} = \hyperlink{classNetwork_afdc85e896d66ebb7c03e5f084fe112f4}{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y} + \hyperlink{classNetwork_a9194d47c3f0524982ed4be54c5dec78e}{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}
+\begin{DoxyCompactList}\small\item\em total number \end{DoxyCompactList}\item 
+const int \hyperlink{classNetwork_a5fa178398926b6883c68f9def650341e}{C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y} = 0.\-1$\ast$\hyperlink{classNetwork_afdc85e896d66ebb7c03e5f084fe112f4}{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}
+\begin{DoxyCompactList}\small\item\em number of excitatory connexion (10\%) \end{DoxyCompactList}\item 
+const int \hyperlink{classNetwork_a07869bbf76df13dc02f460967777f687}{C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y} = 0.\-1$\ast$\hyperlink{classNetwork_a9194d47c3f0524982ed4be54c5dec78e}{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}
+\begin{DoxyCompactList}\small\item\em number of inhibitory connexion (10\%) \end{DoxyCompactList}\item 
+const int \hyperlink{classNetwork_a692a8e65e5f6f098c6569c348b1aa5d1}{C\-\_\-\-T\-O\-T\-A\-L} = \hyperlink{classNetwork_a5fa178398926b6883c68f9def650341e}{C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y} + \hyperlink{classNetwork_a07869bbf76df13dc02f460967777f687}{C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}
+\begin{DoxyCompactList}\small\item\em total number of connexion \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}{\index{Network@{Network}!Network@{Network}}
+\index{Network@{Network}!Network@{Network}}
+\subsubsection[{Network}]{\setlength{\rightskip}{0pt plus 5cm}Network\-::\-Network (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a3cc2fb4f8fa4d507077e8da85ce5a1c8}
+Constructor by default \begin{DoxySeeAlso}{See Also}
+\hyperlink{classNetwork_a673ead2bf1a9446f7cb1eac2e42bfc0d}{initialise\-Connexion} 
+
+\hyperlink{classNetwork_a370614351bf7c2ae2134c3de2a0b1b59}{initialise\-Neurons} print \hyperlink{classNetwork}{Network} created with default constants in \hyperlink{constant_8hpp}{constant.\-hpp} 
+\end{DoxySeeAlso}
+\hypertarget{classNetwork_a59f36ff8e94a65e0088d99dbd17b249d}{\index{Network@{Network}!Network@{Network}}
+\index{Network@{Network}!Network@{Network}}
+\subsubsection[{Network}]{\setlength{\rightskip}{0pt plus 5cm}Network\-::\-Network (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{excitat\-\_\-numb, }
+\item[{const int \&}]{inhibit\-\_\-numb, }
+\item[{const int \&}]{excitat\-\_\-connexion, }
+\item[{const int \&}]{inhibit\-\_\-connexion}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a59f36ff8e94a65e0088d99dbd17b249d}
+Constructor with initialisation 
+\begin{DoxyParams}{Parameters}
+{\em number} & of excitatory neurons \\
+\hline
+{\em number} & of inhibitory neurons \\
+\hline
+{\em number} & of excitatory connexion \\
+\hline
+{\em number} & of inhibitory connexion calls initialise\-Connexion and initialise\-Neurons with the parameters \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}{\index{Network@{Network}!$\sim$\-Network@{$\sim$\-Network}}
+\index{$\sim$\-Network@{$\sim$\-Network}!Network@{Network}}
+\subsubsection[{$\sim$\-Network}]{\setlength{\rightskip}{0pt plus 5cm}Network\-::$\sim$\-Network (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_a7a4e19cdb4bf0c7ecf82baa643831492}
+Destructor which delete the vector of pointers on neurons 
+
+\subsection{Member Function Documentation}
+\hypertarget{classNetwork_a49d5f131ebca7833869c93a7c7ce2e79}{\index{Network@{Network}!get\-Connexion\-Matrix\-Size@{get\-Connexion\-Matrix\-Size}}
+\index{get\-Connexion\-Matrix\-Size@{get\-Connexion\-Matrix\-Size}!Network@{Network}}
+\subsubsection[{get\-Connexion\-Matrix\-Size}]{\setlength{\rightskip}{0pt plus 5cm}array$<$ {\bf Index}, 2 $>$ Network\-::get\-Connexion\-Matrix\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a49d5f131ebca7833869c93a7c7ce2e79}
+G\-E\-T\-T\-E\-R \begin{DoxyReturn}{Returns}
+connexion of matrix size first number of column second number of ligns for the first index 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a3c6253cb84a3a0a23a84befda4a08dbc}{\index{Network@{Network}!get\-Membrane\-Potential\-Neuron@{get\-Membrane\-Potential\-Neuron}}
+\index{get\-Membrane\-Potential\-Neuron@{get\-Membrane\-Potential\-Neuron}!Network@{Network}}
+\subsubsection[{get\-Membrane\-Potential\-Neuron}]{\setlength{\rightskip}{0pt plus 5cm}double Network\-::get\-Membrane\-Potential\-Neuron (
+\begin{DoxyParamCaption}
+\item[{{\bf Index}}]{i}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a3c6253cb84a3a0a23a84befda4a08dbc}
+G\-E\-T\-T\-E\-R 
+\begin{DoxyParams}{Parameters}
+{\em index} & of the neuron we want to have the membrane potential \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+membrane potential of a specific neuron i 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a91b4de88cf516e2971e064fc38e9c938}{\index{Network@{Network}!get\-Nb\-Neurons@{get\-Nb\-Neurons}}
+\index{get\-Nb\-Neurons@{get\-Nb\-Neurons}!Network@{Network}}
+\subsubsection[{get\-Nb\-Neurons}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Index} Network\-::get\-Nb\-Neurons (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a91b4de88cf516e2971e064fc38e9c938}
+G\-E\-T\-T\-E\-R \begin{DoxyReturn}{Returns}
+total number of neuron 
+\end{DoxyReturn}
+\hypertarget{classNetwork_a673ead2bf1a9446f7cb1eac2e42bfc0d}{\index{Network@{Network}!initialise\-Connexion@{initialise\-Connexion}}
+\index{initialise\-Connexion@{initialise\-Connexion}!Network@{Network}}
+\subsubsection[{initialise\-Connexion}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::initialise\-Connexion (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{excitatory\-\_\-number, }
+\item[{const int \&}]{inhibitory\-\_\-number, }
+\item[{const int \&}]{excitatory\-\_\-connexion, }
+\item[{const int \&}]{inhibitory\-\_\-connexion}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a673ead2bf1a9446f7cb1eac2e42bfc0d}
+initialise randomly the connexion matrix resize the number of lines to total number of neurons goes through the lines add a connexion for each columns with a pushback of a random number the first (excitatory\-\_\-connexion) indexes are picked from excitatory neuron the rest of the indexes correspond to inhibitory neurons 
+\begin{DoxyParams}{Parameters}
+{\em number} & of excitatory neurons \\
+\hline
+{\em number} & of inhibitory neurons \\
+\hline
+{\em number} & of excitatory connexion \\
+\hline
+{\em number} & of inhibitory connexion \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a370614351bf7c2ae2134c3de2a0b1b59}{\index{Network@{Network}!initialise\-Neurons@{initialise\-Neurons}}
+\index{initialise\-Neurons@{initialise\-Neurons}!Network@{Network}}
+\subsubsection[{initialise\-Neurons}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::initialise\-Neurons (
+\begin{DoxyParamCaption}
+\item[{const int \&}]{excitatory\-\_\-number, }
+\item[{const int \&}]{inhibitory\-\_\-number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a370614351bf7c2ae2134c3de2a0b1b59}
+initialise the vector of neurons allocates memory for the neurons first (number of excitatory neurons) indexes in vector would be initialise as excitatory the rest of the vector would be the inhibitory neurons 
+\begin{DoxyParams}{Parameters}
+{\em number} & of excitatory neurons \\
+\hline
+{\em number} & of inhibitory neurons \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a2ca8d812c87a17d0391f8db5061a1b75}{\index{Network@{Network}!poisson\-Generator@{poisson\-Generator}}
+\index{poisson\-Generator@{poisson\-Generator}!Network@{Network}}
+\subsubsection[{poisson\-Generator}]{\setlength{\rightskip}{0pt plus 5cm}int Network\-::poisson\-Generator (
+\begin{DoxyParamCaption}
+\item[{const double \&}]{rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a2ca8d812c87a17d0391f8db5061a1b75}
+generate the poisson distribution 
+\begin{DoxyParams}{Parameters}
+{\em the} & rate of the average time for poisson distribution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of distribution 
+\end{DoxyReturn}
+\hypertarget{classNetwork_afd314bc37bd9a5d28df356aeb39b8122}{\index{Network@{Network}!store\-Connexion@{store\-Connexion}}
+\index{store\-Connexion@{store\-Connexion}!Network@{Network}}
+\subsubsection[{store\-Connexion}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::store\-Connexion (
+\begin{DoxyParamCaption}
+\item[{ofstream \&}]{file}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_afd314bc37bd9a5d28df356aeb39b8122}
+method to store the matrix of connexion 
+\begin{DoxyParams}{Parameters}
+{\em file} & where indexes will be stored \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_a0a397c35415b2f9255969a13c80af9ec}{\index{Network@{Network}!store\-Potential@{store\-Potential}}
+\index{store\-Potential@{store\-Potential}!Network@{Network}}
+\subsubsection[{store\-Potential}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::store\-Potential (
+\begin{DoxyParamCaption}
+\item[{const {\bf Index} \&}]{i, }
+\item[{std\-::ofstream \&}]{file}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_a0a397c35415b2f9255969a13c80af9ec}
+method to store the potential of a specific neuron \hypertarget{classNetwork_ad69a9355cb163b97e3d8efede48c1433}{\index{Network@{Network}!store\-Time\-Spike@{store\-Time\-Spike}}
+\index{store\-Time\-Spike@{store\-Time\-Spike}!Network@{Network}}
+\subsubsection[{store\-Time\-Spike}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::store\-Time\-Spike (
+\begin{DoxyParamCaption}
+\item[{std\-::ofstream \&}]{file}
+\end{DoxyParamCaption}
+) const}}\label{classNetwork_ad69a9355cb163b97e3d8efede48c1433}
+method to store the spike time of each neurons 
+\begin{DoxyParams}{Parameters}
+{\em file} & where data would be collected \\
+\hline
+\end{DoxyParams}
+\hypertarget{classNetwork_ab79d5782d33c2cf69f7a2a00bbc534db}{\index{Network@{Network}!update@{update}}
+\index{update@{update}!Network@{Network}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Network\-::update (
+\begin{DoxyParamCaption}
+\item[{const {\bf step} \&}]{t}
+\end{DoxyParamCaption}
+)}}\label{classNetwork_ab79d5782d33c2cf69f7a2a00bbc534db}
+update the network with updating all the neurons in the vector neurons\-\_\- update each neuron with the poisson generator calculate the poisson generator in method poisson\-Generator if a neuron spike then he transfer his amplitude to all the neurons he is connected to with method \hyperlink{classNeuron_a585b933c1a32ca293400f3ad52b2fac7}{Neuron\-::receive} 
+\begin{DoxyParams}{Parameters}
+{\em time} & step \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classNetwork_a5fa178398926b6883c68f9def650341e}{\index{Network@{Network}!C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y@{C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}}
+\index{C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y@{C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}!Network@{Network}}
+\subsubsection[{C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int Network\-::\-C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y = 0.\-1$\ast${\bf N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a5fa178398926b6883c68f9def650341e}
+
+
+number of excitatory connexion (10\%) 
+
+\hypertarget{classNetwork_a07869bbf76df13dc02f460967777f687}{\index{Network@{Network}!C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y@{C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}}
+\index{C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y@{C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}!Network@{Network}}
+\subsubsection[{C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int Network\-::\-C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y = 0.\-1$\ast${\bf N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a07869bbf76df13dc02f460967777f687}
+
+
+number of inhibitory connexion (10\%) 
+
+\hypertarget{classNetwork_a692a8e65e5f6f098c6569c348b1aa5d1}{\index{Network@{Network}!C\-\_\-\-T\-O\-T\-A\-L@{C\-\_\-\-T\-O\-T\-A\-L}}
+\index{C\-\_\-\-T\-O\-T\-A\-L@{C\-\_\-\-T\-O\-T\-A\-L}!Network@{Network}}
+\subsubsection[{C\-\_\-\-T\-O\-T\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}const int Network\-::\-C\-\_\-\-T\-O\-T\-A\-L = {\bf C\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y} + {\bf C\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a692a8e65e5f6f098c6569c348b1aa5d1}
+
+
+total number of connexion 
+
+\hypertarget{classNetwork_aa6e3e23d543791c50b6010bfb223b12d}{\index{Network@{Network}!connexion\-\_\-@{connexion\-\_\-}}
+\index{connexion\-\_\-@{connexion\-\_\-}!Network@{Network}}
+\subsubsection[{connexion\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<${\bf Index}$>$ $>$ Network\-::connexion\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_aa6e3e23d543791c50b6010bfb223b12d}
+
+
+matrix of connexions between the neurons 
+
+each line correspond to a neuron each column correspond to the different neurons which are connected to the neuron of the line each cell contains the index (in neurons\-\_\-) of the connected neuron \hypertarget{classNetwork_afdc85e896d66ebb7c03e5f084fe112f4}{\index{Network@{Network}!N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y@{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}}
+\index{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y@{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}!Network@{Network}}
+\subsubsection[{N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int Network\-::\-N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y = 10000\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_afdc85e896d66ebb7c03e5f084fe112f4}
+
+
+number of excitatory neuron 
+
+\hypertarget{classNetwork_a9194d47c3f0524982ed4be54c5dec78e}{\index{Network@{Network}!N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y@{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}}
+\index{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y@{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}!Network@{Network}}
+\subsubsection[{N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}const int Network\-::\-N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y = 2500\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a9194d47c3f0524982ed4be54c5dec78e}
+
+
+number of inhibitory neuron 
+
+\hypertarget{classNetwork_a0886932ffef920b0691f563eb9eeb92c}{\index{Network@{Network}!N\-\_\-\-T\-O\-T\-A\-L@{N\-\_\-\-T\-O\-T\-A\-L}}
+\index{N\-\_\-\-T\-O\-T\-A\-L@{N\-\_\-\-T\-O\-T\-A\-L}!Network@{Network}}
+\subsubsection[{N\-\_\-\-T\-O\-T\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}const int Network\-::\-N\-\_\-\-T\-O\-T\-A\-L = {\bf N\-\_\-\-E\-X\-C\-I\-T\-A\-T\-O\-R\-Y} + {\bf N\-\_\-\-I\-N\-H\-I\-B\-I\-T\-O\-R\-Y}\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a0886932ffef920b0691f563eb9eeb92c}
+
+
+total number 
+
+\hypertarget{classNetwork_a6f71e4eb423d2f8fd9cfa8d5f01cb257}{\index{Network@{Network}!neurons\-\_\-@{neurons\-\_\-}}
+\index{neurons\-\_\-@{neurons\-\_\-}!Network@{Network}}
+\subsubsection[{neurons\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Neuron}$\ast$$>$ Network\-::neurons\-\_\-\hspace{0.3cm}{\ttfamily [private]}}}\label{classNetwork_a6f71e4eb423d2f8fd9cfa8d5f01cb257}
+
+
+neurons in the network 
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{network_8hpp}{network.\-hpp}\item 
+\hyperlink{network_8cpp}{network.\-cpp}\end{DoxyCompactItemize}
