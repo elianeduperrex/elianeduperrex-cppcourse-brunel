@@ -21,7 +21,7 @@ ax.set_yticklabels([])
 
 pl.subplots_adjust(hspace=0.0)
 ax1 = pl.subplot(gs[-1, :])
-n, bins, patches = pl.hist(data1[0], 50, normed=0, alpha=0.75, color='grey')
+n, bins, patches = pl.hist(data1[0], 80, normed=0, alpha=0.75, color='grey')
 pl.axis([100, 300, 0, 30])
 pl.ylabel('frequency of spike', color = 'grey')
 pl.xlabel('time [ms]', color = 'grey')
