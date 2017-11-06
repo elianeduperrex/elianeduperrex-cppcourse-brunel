@@ -1,0 +1,15 @@
+Determining if files pthread.h exist passed with the following output:
+Change Dir: /home/INTRANET/eduperre/myfiles/2017/cppcourse/elianeduperrex-cppcourse-brunel/cs116-2017-Eliane-Duperrex-master/Neuron/Part2/src/bin/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTryCompileExec490221567/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec490221567.dir/build.make CMakeFiles/cmTryCompileExec490221567.dir/build
+make[1]: Entering directory `/home/INTRANET/eduperre/myfiles/2017/cppcourse/elianeduperrex-cppcourse-brunel/cs116-2017-Eliane-Duperrex-master/Neuron/Part2/src/bin/CMakeFiles/CMakeTmp'
+/usr/local/bin/cmake -E cmake_progress_report /home/INTRANET/eduperre/myfiles/2017/cppcourse/elianeduperrex-cppcourse-brunel/cs116-2017-Eliane-Duperrex-master/Neuron/Part2/src/bin/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec490221567.dir/CheckIncludeFiles.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec490221567.dir/CheckIncludeFiles.c.o   -c /home/INTRANET/eduperre/myfiles/2017/cppcourse/elianeduperrex-cppcourse-brunel/cs116-2017-Eliane-Duperrex-master/Neuron/Part2/src/bin/CMakeFiles/CMakeTmp/CheckIncludeFiles.c
+Linking C executable cmTryCompileExec490221567
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec490221567.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec490221567.dir/CheckIncludeFiles.c.o  -o cmTryCompileExec490221567 -rdynamic 
+make[1]: Leaving directory `/home/INTRANET/eduperre/myfiles/2017/cppcourse/elianeduperrex-cppcourse-brunel/cs116-2017-Eliane-Duperrex-master/Neuron/Part2/src/bin/CMakeFiles/CMakeTmp'
+
+
