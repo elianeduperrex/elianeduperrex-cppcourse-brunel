@@ -15,8 +15,8 @@ const step T_STOP = 400.0/H;
 const double D = 1.5; //!<delay [ms]
 const step DELAY = D/H; //!<delay in step
 	
-const double MU_EXT = 2.0; //!<potential extern
-const double G = 5.0; //!<rate
+const double MU_EXT = 2; //!<potential extern
+const double G = 5; //!<rate
 
 const double J_EXCITATORY = 0.1; //!<amplitude between vthr and vreset in mV
 const double J_INHIBITORY = -G*J_EXCITATORY; //!<amplitude for an inhibitory neuron
