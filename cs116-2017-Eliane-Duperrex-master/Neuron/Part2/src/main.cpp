@@ -13,6 +13,7 @@ int main() {
 	step simTime, t_stop, t_start;
 	///file where the data would be collected
 	ofstream timeSpike("../res/times_spike.txt");
+	ofstream connexion("../res/connexion.txt");
 	///ask the user to enter data for the time interval and the membrane potential
 	initialiser(t_start, t_stop);
 	simTime = t_start;
@@ -32,7 +33,11 @@ int main() {
 	}
 	///store the spike times
 	networkNeuron.storeTimeSpike(timeSpike);
+	/* uncomment it to get a file which will print all the connexions of each neurons
+	 * networkNeuron.storeConnexion(connexion);
+	 * */
 	timeSpike.close();
+	connexion.close();
 	clock_t end = clock();
 	double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
 	cout << "Time of the simulation " << time_spent << endl;

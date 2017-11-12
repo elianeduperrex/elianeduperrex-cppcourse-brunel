@@ -13,7 +13,7 @@ gs = GridSpec(4,1)
 ax0 = pl.subplot(gs[:-1, :])
 ax0.scatter(data1[0],data1[1],alpha=0.8, edgecolors='black', color='grey');
 pl.axis([0, 400, 0, 30])
-pl.title('Graph d (g=6, v_ext/v_thr=4)', fontsize=16, color='black', fontstyle='italic')
+pl.title('Graph c (g=5, v_ext/v_thr=2)', fontsize=16, color='black', fontstyle='italic')
 pl.ylabel('neuron (each line is a neuron)', color='grey')
 ax = pl.gca()
 ax.set_xticklabels([])
